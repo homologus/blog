@@ -1,0 +1,27 @@
+---
+title: A perceptual hash function to store and retrieve large scale DNA sequences
+tags: []
+categories:
+- blog
+---
+[Link](http://arxiv.org/ftp/arxiv/papers/1412/1412.5517.pdf) (h/t:
+@lexnederbragt)
+<!--more-->
+
+> This paper proposes a novel approach for storing and retrieving massive DNA
+sequences.. The method is based on a perceptual hash function, commonly used
+to determine the similarity between digital images, that we adapted for DNA
+sequences. Perceptual hash function presented here is based on a Discrete
+Cosine Transform Sign Only (DCT-SO). Each nucleotide is encoded as a fixed
+gray level intensity pixel and the hash is calculated from its significant
+frequency characteristics. This results to a drastic data reduction between
+the sequence and the perceptual hash. Unlike cryptographic hash functions,
+perceptual hashes are not affected by "avalanche effect" and thus can be
+compared. The similarity distance between two hashes is estimated with the
+Hamming Distance, which is used to retrieve DNA sequences. Experiments that we
+conducted show that our approach is relevant for storing massive DNA
+sequences, and retrieving them.
+
+Nice concept. Wish they checked with real genomic sequence from _E. coli_
+instead of simulated sequence.
+

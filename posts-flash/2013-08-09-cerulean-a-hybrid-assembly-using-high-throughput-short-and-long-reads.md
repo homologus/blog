@@ -1,0 +1,117 @@
+---
+title: 'Cerulean: A Hybrid Assembly using High Throughput Short and Long Reads'
+tags: []
+categories:
+- blog
+---
+[This paper](http://arxiv.org/abs/1307.7933) by Son Pham ([author of
+Sibelia](http://www.homolog.us/blogs/blog/2013/08/02/sibelia-a-dbg-based-tool-
+to-find-synteny-in-multiple-closely-related-microbes/)) and colleagues looks
+like the right approach and is exactly what we need today. (h/t:
+?@lexnederbragt)
+<!--more-->
+
+Problems with the existing approach:
+
+1\. **Error correction of PacBio takes too long.**
+
+> Recent e orts (PacbioToCA [1], LSC [14]) have focused on mapping short
+
+reads to the erroneous long reads to correct the long reads using aligners
+like
+
+NovoAlign [15] and GMAP [16] which can allow large edit distance for the
+mapping. These corrected long reads are then used to generate an assembly with
+
+signi cantly longer contigs. However, such mapping from all short reads to all
+
+long reads with large edit-distance is computationally expensive and requires
+a
+
+large running time even for small bacterial datasets.
+
+For fish genome, PacBioToCa was going to take 7 months !
+
+2\. **Alignment approach misses short PacBios.**
+
+> An alternative approach is to rst assemble the high coverage short read
+
+dataset to produce high quality contigs and use long reads for sca olding.
+Previous tools that use this approach include AHA sca older [17] and
+ALLPATHSLG [18]. However, these approaches are specialized to perform hybrid
+assembly
+
+in the presence additional libraries including Roche 454 reads for AHA sca
+older
+
+and jumping libraries of mate-pair reads for ALLPATHS-LG. Following this
+approach, a hybrid assembler will essentially take as input: the assembler
+should
+
+nd the correct traversal of genome on the graph using the support information
+
+from the mapping of long reads.
+
+While the alignments of long reads on the complete genome can be easily identi
+ed using BLASR [19], alignments to shorter contigs can be spurious.
+
+Solution:
+
+![](http://upload.wikimedia.org/wikipedia/commons/thumb/5/57/PB35_Bleu_C%C3%A9
+rul%C3%A9um.JPG/150px-PB35_Bleu_C%C3%A9rul%C3%A9um.JPG)
+
+[Enters Cerulean](http://arxiv.org/abs/1307.7933)
+
+>
+
+Genome assembly using high throughput data with short reads, arguably, remains
+an unresolvable task in repetitive genomes, since when the length of a repeat
+exceeds the read length, it becomes difficult to unambiguously connect the
+flanking regions. The emergence of third generation sequencing (Pacific
+Biosciences) with long reads enables the opportunity to resolve complicated
+repeats that could not be resolved by the short read data. However, these long
+reads have high error rate and it is an uphill task to assemble the genome
+without using additional high quality short reads. Recently, Koren et al. 2012
+proposed an approach to use high quality short reads data to correct these
+long reads and, thus, make the assembly from long reads possible. However, due
+to the large size of both dataset (short and long reads), error-correction of
+these long reads requires excessively high computational resources, even on
+small bacterial genomes. In this work, instead of error correction of long
+reads, we first assemble the short reads and later map these long reads on the
+assembly graph to resolve repeats.
+
+**Contribution**: We present a hybrid assembly approach that is both computationally effective and produces high quality assemblies. Our algorithm first operates with a simplified version of the assembly graph consisting only of long contigs and gradually improves the assembly by adding smaller contigs in each iteration. In contrast to the state-of-the-art long reads error correction technique, which requires high computational resources and long running time on a supercomputer even for bacterial genome datasets, our software can produce comparable assembly using only a standard desktop in a short running time.
+
+The code can be downloaded from
+[here](http://sourceforge.net/projects/ceruleanassembler/) (thanks Danny,
+@lex). Google does not talk to me properly any more and gave me [this link for
+Cerulean
+assembler](http://www.indeed.com/salary/q-Assembler-l-Cerulean,-KY.html).
+
+Cerulean is written in python and relies on outputs from other heavy duty
+C-codes like ABySS and BLASR. We also note that the algorithm was tried on
+bacterial genome, not large genomes. The following discussion is helpful, if
+you want to try large genomes.
+
+> Cerulean has a very low resource usage and high accuracy of assembled sca
+olds. This makes a very strong case for scaling this approach to larger
+genomes. The algorithm in its current state focuses on making decisions based
+on very simple building blocks one at a time. This makes it possible for us to
+make low risk decisions towards a high accuracy assembly for simple bacterial
+genomes. However, when analyzing datasets from larger complex genome, we have
+no prior knowledge of the structure of the repeats and the layout of the
+contigs generated by short read assemblers. So there are cases where the sca
+olding algorithm may not be able to distinguish between a true adjacency
+signal and a false adjacency signal. In most cases, this will simply stop the
+algorithm from extending a scaffold due to branching. However, we cannot
+conclusively rule out the possibility of producing other side e ects for every
+decision made by the algorithm. We also need to acknowledge the fact that we
+are currently dealing with small bacterial genomes for which we can easily
+obtain high and more or less uniform coverage for short reads. So far we rely
+completely on the short read assembler to generate the initial contigs.
+However, for larger genomes, variable coverage caused due to sequencing bias
+combined with decisions made by the short read assembler can cause
+misassembled contigs to start with. In this case, the sca ffolder will bene t
+from not assuming the assembled contigs as ground truth, but actually testing
+for misassemblies by the short read assembler.
+
