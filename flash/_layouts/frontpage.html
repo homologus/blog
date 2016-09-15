@@ -1,0 +1,30 @@
+---
+layout: compress
+format: frontpage
+title: Super
+---
+{% include _1_head.html %}
+
+{% include _2_topbar_navigation.html %}
+<div class="wrapper">
+{% include _3_masthead.html %}
+
+<h1 class="st"><a href="{{ site.url }}{{ site.baseurl }}/">Homolog.us - Frontier in Bioinformatics</a></h1>
+
+<main role="main">
+    {% for post in site.posts limit:20 %}
+	{% include _6_manoj_article.html %}
+    {% endfor %}
+
+    <p><a href="{{ site.url }}{{ site.baseurl }}/archive/">{{ site.language.more_articles }} ›</a></p>
+
+</main><!-- /#content/.row -->
+
+
+{% include _4_footer.html %}
+
+{% include _5_footer_scripts.html %}
+
+</div><!-- /.wrapper  -->
+</body>
+</html>

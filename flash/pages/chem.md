@@ -1,0 +1,4 @@
+---
+layout: chem
+permalink: /chem/
+---

@@ -1,0 +1,4 @@
+---
+layout: rnaseq
+permalink: /rnaseq/
+---

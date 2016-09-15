@@ -1,0 +1,15 @@
+{% if forloop.first %}<hr>{% endif %}
+  <div class="article-entry">
+    <time>{{ post.date | date_to_string }}</time>
+    <h2 class="title"><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </h2>
+        <article class="tem1-5 bem1-5" >
+            <p align="justify" >
+                <span class="teaser">{% if page.teaser %}{{ page.teaser }}{% else %}{{ post.excerpt  | replace: '<p>', '' | replace: '</p>', ''}}{% endif %}</span>
+            </p>
+            </article>
+        <ul class="article-tag list-inline">
+        {% for tag in post.tags %}
+                <li><b>{{ tag }}</b></li>
+                {% endfor %}
+        </ul>
+  </div>

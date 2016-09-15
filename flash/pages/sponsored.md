@@ -1,0 +1,4 @@
+---
+layout: sponsored
+permalink: /sponsored/
+---

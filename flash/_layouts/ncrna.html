@@ -1,0 +1,39 @@
+---
+layout: compress
+format: frontpage
+title: Super
+---
+{% include _1_head.html %}
+
+{% include _2_topbar_navigation.html %}
+<div class="wrapper">
+{% include _3_masthead.html %}
+
+<h1 class="st"><a href="{{ site.url }}{{ site.baseurl }}/">Evolution and ncRNA</a></h1>
+
+
+<main role="main">
+    {% assign loop_index = 0 %}
+    {% for post in site.posts limit:1600 %}
+        {% if post.categories contains 'ncRNA' %}
+		{% include _6_manoj_article.html %}
+                {% assign loop_index = loop_index | plus:1 %}
+                {% if loop_index == 20 %}
+                        {% break %}
+                {% endif %}
+        {% endif %}
+    {% endfor %}
+
+
+    <p><a href="{{ site.url }}{{ site.baseurl }}/archive_ncrna/">{{ site.language.more_articles }} ›</a></p>
+
+</main><!-- /#content/.row -->
+
+
+{% include _4_footer.html %}
+
+{% include _5_footer_scripts.html %}
+
+</div><!-- /.wrapper  -->
+</body>
+</html>

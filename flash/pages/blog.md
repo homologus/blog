@@ -1,0 +1,4 @@
+---
+layout: bioinformatics
+permalink: /bioinformatics/
+---

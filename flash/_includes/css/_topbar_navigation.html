@@ -1,0 +1,198 @@
+
+
+/* TNAV */
+#tnav {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  white-space: nowrap;
+  /*border-bottom: 1px solid #ddd;*/
+  background: #fff;
+  opacity: .9;
+}
+.tnav-list,
+.tnav-item {
+  position: relative;
+  height: 3em;
+}
+.tnav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.tnav-item {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+#tnav li {
+  line-height: 2;
+}
+#tnav a {
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: .5em 2em .5em 2em;
+  border: 0;
+
+}
+#tnav a:hover {
+  border: 0;
+  background: #ddd;
+}
+.tnav-list {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+}
+/* Initial menus should be inline-block so that they are horizontal */
+.tnav-horizontal .tnav-item,
+.tnav-horizontal .tnav-heading,
+.tnav-horizontal .tnav-separator {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+}
+/* Submenus should still be display: block; */
+.tnav-item .tnav-item {
+  display: block;
+}
+.tnav-children {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  background: #eee;
+}
+.tnav-horizontal .tnav-children {
+  left: 0;
+  top: auto;
+  width: inherit;
+}
+
+.tnav-allow-hover:hover > .tnav-children,
+.tnav-active > .tnav-children {
+  display: block;
+  position: absolute;
+}
+
+/* Vertical Menus - show the dropdown arrow */
+.tnav-has-children > .tnav-link:after {
+  padding-left: 0.5em;
+  content: "\25B8";
+  font-size: small;
+}
+
+/* Horizontal Menus - show the dropdown arrow */
+.tnav-horizontal .tnav-has-children > a:after {
+  content: " \25BE";
+}
+
+/* TNAV Images – Kleiner machen */
+#tnav-logo a {
+  line-height: 1.25;
+  padding: .5em 1em .5em 1em;
+}
+#tnav-logo ul li.tnav-item a {
+  line-height: 2;
+}
+
+#tnav-logo > a:after {
+  content: "";
+}
+
+#tnav-logo svg  {
+  fill: #ccc;
+  width: 1.75em;
+  height: 1.75em;
+}
+#tnav-logo svg:hover {
+  fill: #D80351;
+}
+.tnav-right {
+  float: right;
+}
+
+#tnav-menu > a {
+  color: #ddd;
+}
+#tnav-menu a:hover {
+  color: #D80351;
+}
+#tnav-search a {
+  display: block;
+  line-height: 1.25;
+  padding: .65em 1em .5em 1em;
+}
+#tnav-search svg {
+  width: 1.5em;
+  height: 1.5em;
+  fill: #ddd;
+}
+
+
+
+
+
+.list-inline {
+  padding-left: 0;
+  margin-left: -5px;
+  list-style: none;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+time {
+  color: #ADADAD;
+  display: block;
+}
+
+
+.article-tag {
+  color: #cb283e;
+  text-transform: uppercase;
+  font-size: 0.6em;
+  text-decoration: none;
+}
+.article-tag a {
+  color: #cb283e;
+  font-size: 0.6em;
+  text-decoration: none;
+}
+.article-entry {
+  border-bottom: 1px dotted;
+  border-color: lightgrey;
+  padding: 1.5em;
+}
+.article-entry .article-tag {
+  margin-bottom: 0;
+}
+.article-entry h2.title {
+  padding: 0 0 0 0;
+  margin: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.article-entry h2.title a {
+  font-size: 0.8em;
+  color: #101010;
+  text-decoration: none;
+}
+.article-entry h2.title a:hover {
+  color: #cb283e;
+}
+

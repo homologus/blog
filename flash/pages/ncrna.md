@@ -1,0 +1,4 @@
+---
+layout: ncrna
+permalink: /ncrna/
+---

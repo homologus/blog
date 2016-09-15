@@ -1,0 +1,34 @@
+{% comment %}
+#
+#   Create a Dropdown Menu with › .tnav-has-children .tnav-allow-hover
+#
+#   Align Navigation Elements to the left with › .tnav-right
+#
+#   Hide Navigation Elements on small devices › .tnav-hide
+#
+{% endcomment %}
+<nav id="tnav" class="tnav-horizontal">
+  <ul class="tnav-list">
+    <li id="tnav-logo" class="tnav-item tnav-has-children tnav-allow-hover"><a href="#">{% include svg/flash.svg %}</a>
+
+      <ul class="tnav-children">
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
+	<li class="tnav-item"><a href="https://twitter.com/homolog_us/">Homolog.us @ Twitter</a></li>
+	<li class="tnav-item"><a href="http://homolog.us/Tutorials">Tutorials</a></li>
+      </ul>
+
+    </li>
+    <li class="tnav-item tnav-right tnav-has-children tnav-allow-hover"><a href="#">Navigation</a>
+
+      <ul class="tnav-children">
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/sponsored/">Sponsored</a></li>
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/bioinformatics/">Bioinformatics</a></li>
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/rnaseq/">RNAseq</a></li>
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/ncrna/">ncRNA,Evolution</a></li>
+        <li class="tnav-item"><a href="{{ site.url }}{{ site.baseurl }}/chem/">CRISPR/cas9</a></li>
+      </ul>
+
+    </li>
+  </ul>
+</nav>

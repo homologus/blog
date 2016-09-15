@@ -1,0 +1,118 @@
+
+  html, body {
+    font: 20px/1.6 Georgia, "Times New Roman", serif;
+    color: #333;
+    background: #fefefe;
+    margin: 0;
+    padding: 0;
+  }
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+
+ article,
+ aside,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ main,
+ menu,
+ nav,
+ section,
+ summary {
+  display: block;
+}
+
+.wrapper {
+  max-width: 33em;
+  margin: 5em auto 0;
+  padding: 1em 1em 8em;
+}
+
+a {
+  color: #D80351;
+  text-decoration: none;
+  font-weight: bold;
+}
+a:hover {
+  border-bottom: 3px solid #D80351;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 1px;
+  border: 0;
+  background-color: #ddd;
+}
+.big-teaser { margin: 0 0 2em 0; font-size: 1.2em;}
+figure { margin: 0 0 2em 0;}
+figcaption { text-align: right; color: #aaa !important;}
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0;}
+h1 { font-size: 2.074em }
+h2 { font-size: 1.728em; padding: 1.5em 0 0 0;}
+h3 { font-size: 1.44em  }
+h4,
+h5,
+h6 { font-size: 1.2em }
+small { font-size: 0.833em }
+.no-bullet { list-style: none; margin: 0;padding:0 0 1em 0; }
+.no-bullet li { border-bottom: 1px solid #ddd; padding: .5em 0;}
+.no-bullet li:first-child { border-top: 1px solid #ddd; padding: .5em 0;}
+
+{% comment %}st = site-title{% endcomment %}
+.st { font-size: 2.488em }
+{% comment %}sh = subheadline{% endcomment %}
+.sh { margin: 0; color: #aaa; text-transform: uppercase; font-weight: normal; letter-spacing: 1px; }
+.title { }
+a .teaser { color: #333; font-weight: normal;}
+article p:first.teaser { }
+article .main-content > p:first-child { font-size: 1.2em; }
+
+
+.tem1 { margin-top: 1em }
+.tem1-5 { margin-top: 1.5em }
+.tem2 { margin-top: 2em }
+.sans { font-family: 'Helvetica Neue', Verdana, sans-serif; }
+.bem1 { margin-bottom: 1em }
+.bem1-5 { margin-top: 1.5em }
+.bem2 { margin-bottom: 2em }
+
+dt { font-weight: bold;}
+pre { overflow: scroll; }
+pre,code,  kbd { background: #ddd;padding: .2em; border-radius: 3px;}
+abbr[title] { border-bottom: 1px dotted; }
+
+
+img {
+  border: 0;
+  max-width: 100%;
+  border-radius: 3px;
+}
+img.right { float: right; margin: .25em 0 .5em 1em;}
+img.left { float: left; margin: .25em 1em .5em 0;}
+
+.flex-video {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 67.5%;
+  margin-bottom: 1em;
+}
+.flex-video iframe, .flex-video object, .flex-video embed, .flex-video video {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+
+
+
