@@ -69,7 +69,7 @@ Not really.
 
 [Less Hashing, Same Performance: Building a Better Bloom Filter - Adam Kirsch
 and Michael
-Mitzenmacher](http://www.eecs.harvard.edu/~kirsch/pubs/bbbf/esa06.pdf)
+Mitzenmacher](https://www.eecs.harvard.edu/~michaelm/postscripts/tr-02-05.pdf)
 
 > A standard technique from the hashing literature is to use two hash
 functions h1(x) and h2(x) to simulate additional hash functions of the form
